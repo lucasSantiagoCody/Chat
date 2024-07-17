@@ -14,7 +14,6 @@ SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = [host.strip() for host in config('ALLOWED_HOSTS').split(',')]
 
 
@@ -66,11 +65,11 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'chat_db',
-        'USER': 'postgres',
-        'HOST': 'my-postgres',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'HOST': config('DB_HOST'),
         'PASSWORD': config('DB_PASSWORD'),
-        'PORT': '5432',
+        'PORT': config('DB_PORT'),
     }
 }
 
