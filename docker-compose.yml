@@ -1,0 +1,25 @@
+version: "3.9"
+
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    command: python /app/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+  db:
+    image: postgres
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      - "POSTGRES_DB=chat_db"
+      - "POSTGRES_USER=postgres"
+      - "POSTGRES_PASSWORD=ae09db8ee173f11ea136f2665de6d398502162c7"
+
+
+volumes:
+  postgres-data:
