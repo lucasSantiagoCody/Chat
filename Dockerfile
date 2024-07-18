@@ -8,5 +8,5 @@ WORKDIR /app
 
 COPY ./requirements.txt /app
 COPY . . 
-
+RUN python -m pip install pip==24.0
 RUN pip install -r requirements.txt
