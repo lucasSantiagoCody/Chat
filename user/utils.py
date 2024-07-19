@@ -14,7 +14,9 @@ def register_request_validator(request_data):
     if not check_username:
         messages_error.append('Invalid username field')
 
-    if not check_email:
+    if check_email == 'already_exists':
+        messages_error.append('This email already exits')
+    elif check_email == False:
         messages_error.append('Invalid email field')
 
     if not check_password:
