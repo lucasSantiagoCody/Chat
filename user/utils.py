@@ -14,3 +14,8 @@ def email_field_validator(email):
         if not exists_email:
             return True
     return False
+
+def password_field_validator(pswd):
+    if pswd and len(pswd) >= 6:
+        return True
+    return False
