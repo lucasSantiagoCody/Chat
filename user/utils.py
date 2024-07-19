@@ -1,8 +1,9 @@
 from .models import User
 import re
 
+
 def username_field_validator(username):
-    if username and len(username) >= 3:
+    if len(username.strip()) >= 3:
         return True
     return False
 
@@ -16,6 +17,6 @@ def email_field_validator(email):
     return False
 
 def password_field_validator(pswd):
-    if pswd and len(pswd) >= 6:
+    if len(pswd.strip()) >= 6:
         return True
     return False
