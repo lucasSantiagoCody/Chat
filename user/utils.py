@@ -36,7 +36,9 @@ def email_field_validator(email):
 
     if re.fullmatch(email_regex_pattern, email):
         exists_email = User.objects.filter(email=email)
-        if not exists_email:
+        if exists_email:
+            return 'already_exists'
+        else:
             return True
     return False
 
