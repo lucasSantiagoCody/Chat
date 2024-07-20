@@ -13,6 +13,7 @@ services:
       - .:/app
     depends_on:
       - db
+      - redis
   db:
     image: postgres
     volumes:
@@ -21,7 +22,13 @@ services:
       - "POSTGRES_DB=chat_db"
       - "POSTGRES_USER=postgres"
       - "POSTGRES_PASSWORD=ae09db8ee173f11ea136f2665de6d398502162c7"
-
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
 
 volumes:
   postgres-data:
+  redis-data:
