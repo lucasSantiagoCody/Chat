@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # My apps
     'user',
+    'chat',
     # Third apps
     'channels',
     
