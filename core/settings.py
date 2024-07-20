@@ -20,6 +20,7 @@ ALLOWED_HOSTS = [host.strip() for host in config('ALLOWED_HOSTS').split(',')]
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -28,6 +29,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # My apps
     'user',
+    # Third apps
+    'channels',
+    
 ]
 
 MIDDLEWARE = [
