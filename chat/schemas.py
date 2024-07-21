@@ -1,9 +1,9 @@
 from ninja import Schema
 
-class RoomSchema:
+class RoomSchema(Schema):
     name: str
 
-class MessageRoom:
+class MessageRoom(Schema):
     room_id: int
     content: str
     
