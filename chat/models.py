@@ -1,6 +1,6 @@
 from .utils import generate_random_string
 from django.db import models
-
+from user.models import User
 
 
 class Room(models.Model):
@@ -20,5 +20,10 @@ class Room(models.Model):
 
 class Message(models.Model):
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
+    sender = models.ForeignKey(
+        User, 
+        on_delete=models.CASCADE,
+        related_name='user_sender'
+        )
     content = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
