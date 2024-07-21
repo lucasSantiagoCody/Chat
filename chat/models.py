@@ -6,6 +6,7 @@ from user.models import User
 class Room(models.Model):
     token = models.CharField(max_length=255, unique=True, blank=True)
     room = models.CharField(max_length=50)
+    users = models.ManyToManyField(User)
     created_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
